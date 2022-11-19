@@ -2,9 +2,11 @@ import Link from 'next/link'
 
 export default function BlogHeader({
   title,
+  subtitle,
   level,
 }: {
   title: string
+  subtitle: string
   level: 1 | 2
 }) {
   switch (level) {
@@ -15,21 +17,7 @@ export default function BlogHeader({
             {title}
           </h1>
           <h4 className="mt-5 text-center text-lg md:pl-8 md:text-left">
-            A statically generated blog example using{' '}
-            <a
-              href="https://nextjs.org/"
-              className="underline transition-colors duration-200 hover:text-success"
-            >
-              Next.js
-            </a>{' '}
-            and{' '}
-            <a
-              href="https://sanity.io/"
-              className="underline transition-colors duration-200 hover:text-success"
-            >
-              Sanity
-            </a>
-            .
+            {subtitle}
           </h4>
         </header>
       )
@@ -42,6 +30,9 @@ export default function BlogHeader({
               {title}
             </Link>
           </h2>
+          <h4 className="mt-5 text-center text-lg md:pl-8 md:text-left">
+            {subtitle}
+          </h4>
         </header>
       )
 

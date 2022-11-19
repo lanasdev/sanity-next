@@ -21,6 +21,7 @@ export default function PostPage(props: {
   const { preview, loading, data, settings } = props
   const { post = {} as any, morePosts = [] } = data || {}
   const { title = 'Blog.' } = settings || {}
+  const { subtitle = 'Sub' } = settings || {}
 
   const router = useRouter()
 
@@ -33,7 +34,7 @@ export default function PostPage(props: {
   return (
     <Layout preview={preview} loading={loading}>
       <Container>
-        <BlogHeader title={title} level={2} />
+        <BlogHeader title={title} subtitle={subtitle} level={2} />
         {router.isFallback || (preview && !post) ? (
           <PostTitle>Loading…</PostTitle>
         ) : (

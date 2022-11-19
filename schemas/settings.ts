@@ -17,5 +17,13 @@ export default defineType({
       initialValue: 'Blog.',
       validation: (rule) => rule.required(),
     },
+    {
+      name: 'subtitle',
+      description: 'This field is the subtitle of your blog.',
+      title: 'Subtitle',
+      type: 'string',
+      initialValue: 'Subtitle',
+      validation: (rule) => rule.required(),
+    },
   ],
 })
