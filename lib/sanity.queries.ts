@@ -20,7 +20,6 @@ const projectFields = groq`
   "author": author->{name, picture},
 `
 
-
 export const settingsQuery = groq`*[_type == "settings"][0]{title, subtitle}`
 
 export const indexQuery = groq`

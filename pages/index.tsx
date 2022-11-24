@@ -1,3 +1,4 @@
+import Hero from 'components/Hero'
 import IndexPage from 'components/IndexPage'
 import { apiVersion, dataset, projectId } from 'lib/sanity.api'
 import {
@@ -57,13 +58,16 @@ export default function IndexRoute({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   if (preview) {
     return (
-      <PreviewSuspense
-        fallback={
-          <IndexPage preview loading posts={posts} settings={settings} />
-        }
-      >
-        <PreviewIndexPage token={token} />
-      </PreviewSuspense>
+      <>
+        {/* <Hero /> */}
+        <PreviewSuspense
+          fallback={
+            <IndexPage preview loading posts={posts} settings={settings} />
+          }
+        >
+          <PreviewIndexPage token={token} />
+        </PreviewSuspense>
+      </>
     )
   }
 
